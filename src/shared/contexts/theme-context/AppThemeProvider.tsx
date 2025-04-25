@@ -1,7 +1,7 @@
 import { Box, ThemeProvider } from '@mui/material'
 import { DarkTheme, LightTheme } from '../../themes'
 import { useCallback, useMemo, useState } from 'react'
-import { ThemeContext } from './ThemeContext'
+import { AppThemeContext } from './AppThemeContext'
 
 interface IThemeProvider {
   children: React.ReactNode
@@ -23,7 +23,7 @@ export const AppThemeProvider: React.FC<IThemeProvider> = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <ThemeContext.Provider value={{ themeName, toggleTheme }}>
+      <AppThemeContext.Provider value={{ themeName, toggleTheme }}>
         <Box
           width={'100vw'}
           height={'100vh'}
@@ -31,7 +31,7 @@ export const AppThemeProvider: React.FC<IThemeProvider> = ({ children }) => {
         >
           {children}
         </Box>
-      </ThemeContext.Provider>
+      </AppThemeContext.Provider>
     </ThemeProvider>
   )
 }

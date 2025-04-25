@@ -5,8 +5,8 @@ interface IThemeContextData {
   toggleTheme: () => void
 }
 
-export const ThemeContext = createContext({} as IThemeContextData)
+export const AppThemeContext = createContext({} as IThemeContextData)
 
 export const useAppThemeContext = () => {
-  return useContext(ThemeContext)
+  return useContext(AppThemeContext)
 }
